@@ -19,7 +19,9 @@ class GoldCalculator:
         try:
             gold_amount = float(input("Kaç gram altının var? "))
             gram_gold_price = self.get_gold_price(self.url)
-            print(f"{gold_amount} gram altini satarsan \033[32m{gold_amount * gram_gold_price:,.2f}\033[0m₺ ediyor.")
+            gold_value = gold_amount * gram_gold_price
+            print(f"{gold_amount} gram altini satarsan \033[32m{gold_value:,.2f}\033[0m₺ ediyor.")
+            print(f"{gold_amount} gram altının {gold_amount/40} gramı zekat olarak \033[32m{(gold_amount/40) * gram_gold_price:,.2f}\033[0m₺ ediyor.")
         except Exception as e:
             print(e)
 
